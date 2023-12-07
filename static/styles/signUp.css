@@ -1,0 +1,17 @@
+
+      body {
+        background-color: #38b6ff;
+        opacity: 98%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      #loginbtn {
+        width: 100%;
+        padding: 12px;
+        margin: auto;
+        border-radius: 120px;
+        font-weight: 600;
+        margin-top: 20px;
+        display: inline-block;
+      }

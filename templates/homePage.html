@@ -1,0 +1,212 @@
+<html>
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../public/style/homePage.css"
+    />
+    <style>
+      @import
+      url("https://fonts.googleapis.com/css2?family=Aboreto&family=Dancing+Script&family=Josefin+Sans:ital,wght@1,400&family=Righteous&family=Roboto+Mono:wght@300&display=swap");
+      * { margin: 0; padding: 0; border: none; outline: none; box-sizing:
+      border-box; font-family: "Josefin Sans", sans-serif; scroll-behavior:
+      smooth; } .header { position:fixed; top: 0; left: 0; width: 100%; /*
+      padding: 10px 8%; */ background: white; display: flex; justify-content:
+      space-evenly; align-items:end; z-index: 100; box-shadow: 0 0 10px
+      rgba(0,0,0,0.1); } .logo { height: fit-content; padding: 16px; } .logo h3
+      { font-size: 2rem; font-weight: bold; color: #38b6ff; } nav a{ font-size:
+      20px; color: black; text-decoration: none; font-weight: 600; margin: 30px;
+      align-items: center; } nav a:hover, nav a.active{ color: #38b6ff; } nav
+      .btn { display: inline-block; padding: 10px 20px; background: #38b6ff;
+      color: white; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: 0.5s; } nav .btn:hover{ background-color: transparent; color:
+      #38b6ff; border: 2px solid #38b6ff; } .main-content { margin-top: 160px;
+      display: flex; flex-direction: column; align-items: center; } section {
+      width: 100%; height: fit-content; display: flex; /* padding-left: 100px;
+      */ margin: 32px; border-radius: 25px; padding-top: 20px; padding-bottom:
+      30px; margin-bottom: 30px; margin-top: 20px; } section h3 { font-size:
+      36px; font-weight: bold; margin-bottom: 20px; color: #38b6ff; padding:
+      16px; } .content { /* max-width: 630px; */ margin-top: 20px; margin-left:
+      20px; margin-right: 20px; } .content p{ font-size: 24px; font-style:
+      italic; text-align: justify; } #home .content{ margin-right: 20%;
+      padding:0 30px; } #scholarlytics .content{ margin-left: 20%; padding:0
+      30px; } #features .content{ padding:0 30px; margin-right: 20%; } #about
+      .content{ margin-left: 20%; padding:0 30px; }
+    </style>
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/b67d32b573.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
+    ></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>Scholarlytics</h3>
+        <svg
+          width="90"
+          height="13"
+          viewBox="0 0 90 13"
+          fill="none"
+          id="arrow"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M89.9975 6.38673L79.9975 0.613228V12.1602L89.9975 6.38673ZM-0.00250244 7.38673H80.9975V5.38673H-0.00250244V7.38673Z"
+            fill="black"
+          />
+        </svg>
+      </div>
+      <nav class="navbar navbar-lg">
+        <a href="#home">Home</a>
+        <a href="#scholarlytics">Why Scholarlytics?</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a class="btn" href="/login">Login / Sign Up</a>
+      </nav>
+    </header>
+
+    <div class="container d-flex align-items-center mx-5">
+      <div class="main-content">
+        <section id="home">
+          <div class="content">
+            <h3>Welcome to Scholarlytics!!</h3>
+            <p>
+              A platform that analyze and understand individual student
+              learning patterns, preferences, and performance, ultimately
+              enhancing personalized education experiences and academic success.
+              Helps students to create their profile for professional career
+              developemt.
+            </p>
+          </div>
+          <br />
+          <div class="animation">
+            <script
+              src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+              type="module"
+            ></script>
+
+            <dotlottie-player
+              src="https://lottie.host/abcec3ca-0eb5-4a11-bb8c-0eee787456d0/RxjiEYreky.json"
+              background="transparent"
+              speed="1"
+              style="width: 40rem"
+              loop
+              autoplay
+            ></dotlottie-player>
+          </div>
+        </section>
+
+        <section id="scholarlytics">
+          <script
+            src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+            type="module"
+          ></script>
+
+          <dotlottie-player
+            src="https://lottie.host/cd0b830b-0ec3-49e6-a4d8-c0d8a7493a3a/vu4ax6DBJv.json"
+            background="transparent"
+            speed="1"
+            style="width: 400rem"
+            loop
+            autoplay
+          ></dotlottie-player>
+
+          <div class="content">
+            <h3>Why Scholarlytics?</h3>
+            <p>
+              Welcome to Scholarlytics,where we're dedicated to revolutionizing
+              the way educational institutions and students connect.Our Student
+              Profiling Software is designed to empower universities to better
+              understand,engage and support their students on their academic
+              journeys. At Scholarlytics, we believe that every student is
+              unique, with their own set of strengths, challenges, and
+              aspirations. Our mission is to harness the power of technology to
+              help educational institutions create personalized learning
+              experiences and provide the guidance and support that each student
+              deserves.
+            </p>
+          </div>
+          <br />
+        </section>
+
+        <section id="features">
+          <div class="content">
+            <h3>Our Features</h3>
+            <p>
+              1. Personalized Learning<br />
+              2. Efficient Assessments<br />
+              3. Resources<br />
+              4. Job profiles matching your profile<br />
+            </p>
+          </div>
+          <br />
+          <div class="animation">
+            <script
+              src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+              type="module"
+            ></script>
+
+            <dotlottie-player
+              src="https://lottie.host/7889ca7f-c046-4365-b53c-427d2d9df462/D2jemL6ULo.json"
+              background="transparent"
+              speed="1"
+              style="width: 40rem"
+              loop
+              autoplay
+            ></dotlottie-player>
+          </div>
+        </section>
+
+        <section id="about">
+          <div class="animation">
+            <script
+              src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+              type="module"
+            ></script>
+
+            <dotlottie-player
+              src="https://lottie.host/bc19cc94-21b6-4adc-84fb-d175f5180152/nEuzcJMtRf.json"
+              background="transparent"
+              speed="1"
+              style="width: 40rem;"
+              loop
+              autoplay
+            ></dotlottie-player>
+          </div>
+          <div class="content">
+            <h3>About Scholarlytics</h3>
+            <p>
+              Welcome to Scholarlytics,where we're dedicated to revolutionizing
+              the way educational institutions and students connect.Our Student
+              Profiling Software is designed to empower universities to better
+              understand,engage and support their students on their academic
+              journeys. At Scholarlytics, we believe that every student is
+              unique, with their own set of strengths, challenges, and
+              aspirations. Our mission is to harness the power of technology to
+              help educational institutions create personalized learning
+              experiences and provide the guidance and support that each student
+              deserves.
+            </p>
+          </div>
+          <br />
+        </section>
+      </div>
+    </div>
+
+    <script src="homePage.js"></script>
+  </body>
+</html>

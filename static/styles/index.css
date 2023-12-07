@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Dancing+Script&family=Josefin+Sans:ital,wght@1,400&family=Righteous&family=Roboto+Mono:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.nav ul li .active {
+  background: #e0e0e058;
+}
+
+body {
+  background: #dfe9f5;
+}
+
+.container {
+  display: flex;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  padding: 0 1.7rem;
+  color: #fff;
+  overflow: hidden;
+  transition: all 0.5s linear;
+  background: #38b6ff;
+}
+
+.menu {
+  position: relative;
+  list-style: none;
+  padding-top: 16px;
+}
+
+.logo {
+  height: 80px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.logo h3 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.menu li {
+  padding: 1rem;
+  margin: 8px 0;
+  border-radius: 8px;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar h3 {
+  color: white;
+  text-align: center;
+  margin-bottom: -7px;
+}
+
+#arrow {
+  margin-left: 25px;
+  margin-bottom: 30px;
+}
+
+.menu li:hover {
+  background: #e0e0e058;
+}
+
+.menu a {
+  color: #ffff;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.menu a i {
+  font-size: 1.2rem;
+}
+
+.logout {
+  position: absolute;
+  margin-top: 100px;
+  left: 0;
+  width: 100%;
+}
+
+/* Main Section */
+.main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  margin: 20px;
+  margin-left: 250px;
+}
+
+.top-message h1 {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.top-message h3 {
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.main-top {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.main-top h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.main-top i {
+  position: absolute;
+  right: 0;
+  margin: 10px 30px;
+  color: rgb(110, 109, 109);
+  cursor: pointer;
+}
+
+.main .main-heading {
+  display: flex;
+  margin-top: 20px;
+}
+
+.main .main-heading .box {
+  height: fit-content;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  border-color: #38b6ff;
+  align-content: space-evenly;
+}
+
+.main .main-heading .box:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.main .main-heading .box p {
+  font-size: 1rem;
+  text-align: start;
+}
+
+.main .main-heading .box a {
+  font-size: 18px;
+  text-align: start;
+}
+
+.main-skills {
+  display: flex;
+  margin-top: 20px;
+}
+
+.main .main-skills {
+  width: 96%;
+  height: 300px;
+  padding: 16px 16px 30px 16px;
+  margin: 20px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.main-skills .card {
+  width: 25%;
+  height: 90%;
+  margin: 20px;
+  background: rgb(235, 233, 233);
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.main-skills .card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.main-skills .card h3 {
+  margin: 10px;
+  text-transform: capitalize;
+}
+
+.main-skills .card p {
+  font-size: 12px;
+}
+
+.main-skills .card button {
+  background: #38b6ff;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.main-skills .card i {
+  font-size: 28px;
+  padding: 10px;
+}
+
+/* Courses */
+.main-course {
+  margin-top: 40px;
+  text-transform: capitalize;
+}
+
+.course-box {
+  width: 96%;
+
+  padding: 32px;
+  margin: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.course-box ul {
+  list-style: none;
+  display: flex;
+}
+
+.course-box ul li {
+  margin: 16px;
+  color: gray;
+  cursor: pointer;
+}
+
+.course-box ul .active {
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+
+.course-box .course {
+  display: flex;
+
+}
+
+#box-course {
+  width: 30%;
+  height: 50%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+  height: 300px;
+   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width:250px;
+  color:white;
+  border-radius:0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px; /* Set a height for the box if needed */
+    border: 1px solid #ccc; /* Optional: to visualize the box */
+
+  }
+
+  /* Optional: Style for the content inside the box */
+  .box h3,
+  .box p {
+  margin-top: auto;
+
+  }
+
+  .box button {
+    margin-top: auto; /* This pushes the button to the bottom */
+  }
+
+
+.box:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.box p {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.box button {
+  background: #000;
+  color: #fff;
+  padding: 7px 10px;
+  border-radius: 10px;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
+.box button:hover {
+  background: #38b6ff;
+}
+
+.box i {
+  font-size: 4rem;
+  float: right;
+}
+
+.html {
+  color: rgb(25, 94, 54);
+}
+
+.css {
+  color: rgb(104, 179, 35);
+}
+
+.js {
+  color: rgb(28, 98, 179);
+}
+
+.android {
+  color: rgb(104, 179, 35);
+}
+
+.container .profile img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.container .profile h3 {
+  color: #ffff;
+  font-size: 18px;
+  margin: 10px 0 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.course {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adjust as needed */
+}
+
+.box {
+  /* Adjust margin as needed */
+  margin-bottom: 20px;
+  /* Adjust margin as needed */
+  box-sizing: border-box;
+
+}
+#box-img{
+    width:100%
+}
+/* Optional: Media query for responsiveness */
+@media (max-width: 768px) {
+  .box {
+    width: calc(50% - 10px);
+  }
+}
+
+/* Optional: Media query for smaller screens */
+@media (max-width: 480px) {
+  .box {
+    width: 100%;
+  }
+}
