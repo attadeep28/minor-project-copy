@@ -31,15 +31,11 @@
           />
         </svg>
       </div>
-<!--      <div class="profile">-->
-<!--        <img src="D:\pythonProject\static\icons8-person-48.png" alt="profile image">-->
-<!--        <h3>fullname</h3>-->
-<!--        <hr class="solid">-->
-<!--      </div>-->
+
       <ul class="menu">
         <li class="active ">
 
-            <a href="/index" onclick="redirect('/index')">
+            <a href="/index/{{email}}">
             <i class="fa-solid fa-house"></i>
             <span>Home</span>
           </a>
@@ -66,7 +62,7 @@
             <span>Settings</span>
           </a>
         </li>
-        <li class="logout">
+        <li>
           <a href="/login">
             <i class="fa-solid fa-right-from-bracket"></i>
             <span>Log Out</span>
@@ -90,7 +86,7 @@
         <div class="box">
           <i class="fa-solid fa-earth-americas earth"></i>
           <p>Make your profile stand out to Global companies</p>
-          <a href="">Update profile</a>
+          <a href="/profile/{{email}}">Update profile</a>
         </div>
 
         <div class="box">

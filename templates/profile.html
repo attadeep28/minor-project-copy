@@ -12,7 +12,7 @@
     />
 
      <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
-
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
     <!-- Font Awesome Cdn Link -->
     <link
       rel="stylesheet"
@@ -24,7 +24,11 @@
     ></script>
 
     <style>
+        *{
+         padding: 0;
+        }
       body {
+
         opacity: 98%;
         height: 100%;
         background-repeat: no-repeat;
@@ -35,75 +39,132 @@
         padding: 0;
         margin-top: 0;
       }
+        ol,ul{
+            padding-left:0;
+        }
     </style>
   </head>
   <body>
     <div class="container">
-      <nav>
-        <div class="logo">
-          <i class="fa-solid fa-graduation-cap"></i>
-          <h3>Scholarlytics</h3>
-          <svg
-            width="90"
-            height="13"
-            align="center"
-            viewBox="0 0 90 13"
-            fill="none"
-            id="arrow"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M89.9975 6.38673L79.9975 0.613228V12.1602L89.9975 6.38673ZM-0.00250244 7.38673H80.9975V5.38673H-0.00250244V7.38673Z"
-              fill="black"
-            />
-          </svg>
-        </div>
-<!--        <div class="profile">-->
-<!--          <img src="../person.png" alt="profile image" />-->
-<!--          <h3>Abhishek Rathod</h3>-->
-<!--          <hr class="solid" />-->
-<!--        </div>-->
-        <ul class="menu">
-          <li class="active">
-            <a href="/index/{{student_info['email']}}">
-              <i class="fa-solid fa-house"></i>
-              <span>Home</span>
-            </a>
-          </li>
-          <li>
-            <a href="/profile/{{student_info['email']}}">
-              <i class="fa-solid fa-user"></i>
-              <span>Profile</span>
-            </a>
-          </li>
-          <li>
-            <a href="assessment.html"
-              ><i class="fa-solid fa-book"></i>
-              <span>Assessment</span>
-            </a>
-          </li>
-          <li>
-            <a href="courses.html"
-              ><i class="fa-solid fa-chalkboard-user"></i>
-              <span>Courses</span>
-            </a>
-          </li>
-          <li>
-            <a href="settings.html"
-              ><i class="fa-solid fa-gear"></i>
-              <span>Settings</span>
-            </a>
-          </li>
-          <li class="logout">
-            <a href="login.html">
-              <i class="fa-solid fa-right-from-bracket"></i>
-              <span>Log Out</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+<!--      <nav>-->
+<!--         <div class="logo">-->
+<!--        <i class="fa-solid fa-graduation-cap"></i>-->
+<!--        <h3>Scholarlytics</h3>-->
+<!--        <svg-->
+<!--          width="90"-->
+<!--          height="13"-->
+<!--          align="center"-->
+<!--          viewBox="0 0 90 13"-->
+<!--          fill="none"-->
+<!--          id="arrow"-->
+<!--          xmlns="http://www.w3.org/2000/svg"-->
+<!--        >-->
+<!--          <path-->
+<!--            d="M89.9975 6.38673L79.9975 0.613228V12.1602L89.9975 6.38673ZM-0.00250244 7.38673H80.9975V5.38673H-0.00250244V7.38673Z"-->
+<!--            fill="black"-->
+<!--          />-->
+<!--        </svg>-->
+<!--      </div>-->
+<!--        <ul class="menu">-->
+<!--          <li class="active">-->
+<!--            <a href="/index/{{student_info['email']}}">-->
+<!--              <i class="fa-solid fa-house"></i>-->
+<!--              <span>Home</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="/profile/{{student_info['email']}}">-->
+<!--              <i class="fa-solid fa-user"></i>-->
+<!--              <span>Profile</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="assessment.html"-->
+<!--              ><i class="fa-solid fa-book"></i>-->
+<!--              <span>Assessment</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="courses.html"-->
+<!--              ><i class="fa-solid fa-chalkboard-user"></i>-->
+<!--              <span>Courses</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="settings.html"-->
+<!--              ><i class="fa-solid fa-gear"></i>-->
+<!--              <span>Settings</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--          <li class="logout">-->
+<!--            <a href="login.html">-->
+<!--              <i class="fa-solid fa-right-from-bracket"></i>-->
+<!--              <span>Log Out</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </nav>-->
 
-      <section class="main">
+      <nav>
+      <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>Scholarlytics</h3>
+        <svg
+          width="90"
+          height="13"
+          align="center"
+          viewBox="0 0 90 13"
+          fill="none"
+          id="arrow"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M89.9975 6.38673L79.9975 0.613228V12.1602L89.9975 6.38673ZM-0.00250244 7.38673H80.9975V5.38673H-0.00250244V7.38673Z"
+            fill="black"
+          />
+        </svg>
+      </div>
+
+      <ul class="menu">
+        <li class="active ">
+
+            <a href="/index/{{email}}">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </a>
+
+        </li>
+        <li>
+          <a href="/profile/{{email}}" >
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="/Assessment"><i class="fa-solid fa-book"></i>
+            <span>Assessment</span>
+          </a>
+        </li>
+        <li>
+          <a href="/Courses"><i class="fa-solid fa-chalkboard-user"></i>
+            <span>Courses</span>
+          </a>
+        </li>
+        <li>
+          <a href="/Settings"><i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="/login">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Log Out</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+        <section class="main">
         <div class="card">
           <div class="card-body">
             <script

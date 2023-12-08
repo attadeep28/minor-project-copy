@@ -88,7 +88,7 @@ def get_course_recom(email):
     item_details = mongo.db.studentsInfo.find_one({'email': email})
 
     course_obj_container = list()
-    print(item_details['domains'])
+    # print(item_details['domains'])
 
     for i in item_details['domains']:
         cluster_no_list = courses_data[courses_data['skills'] == i].cluster_predicted.tolist()
@@ -120,7 +120,7 @@ def loadprofile(email):
     print(email)
     user_data = mongo.db.studentsInfo.find_one({'email': email})
     if user_data:
-        return render_template("profile.html", student_info=user_data)
+        return render_template("profile.html", student_info=user_data, email=email)
     return "No user present"
 
 
@@ -137,7 +137,13 @@ def loadindex(email):
     list_of_objects = sorted(list_of_objects, key=lambda x: x.title)
     user = mongo.db.students.find_one({'email': email})
     user_data = mongo.db.studentsInfo.find_one({'email': email})
-
+    image_urls = [
+        "https://cdn.sanity.io/images/tlr8oxjg/production/9a86b0e680636159ffeae3cb3c8533fb8530a16c-1456x816.png?w=3840&q=80&fit=clip&auto=format",
+        "https://cdn.sanity.io/images/tlr8oxjg/production/3565e89270c2601dd194f894bfdbe489f265917e-1456x816.png?w=3840&q=80&fit=clip&auto=format",
+        "https://cdn.sanity.io/images/tlr8oxjg/production/9a9f4a2035426b1f22ab20b7a36a5ffa26c5bc22-1456x816.png?w=3840&q=80&fit=clip&auto=format",
+        "https://cdn.sanity.io/images/tlr8oxjg/production/15319392e0b3b29c4301b570e7e83f211b84ca29-1456x816.png?w=3840&q=80&fit=clip&auto=format",
+        "https://cdn.sanity.io/images/tlr8oxjg/production/ada93729daf922ad0318c8c0295e5cb477921808-1456x816.png?w=3840&q=80&fit=clip&auto=format"
+    ]
     my_dict = {
         "artificial intelligence": "https://cdn.sanity.io/images/tlr8oxjg/production/9a86b0e680636159ffeae3cb3c8533fb8530a16c-1456x816.png?w=3840&q=80&fit=clip&auto=format",
         "machine learning": "https://cdn.sanity.io/images/tlr8oxjg/production/3565e89270c2601dd194f894bfdbe489f265917e-1456x816.png?w=3840&q=80&fit=clip&auto=format",
@@ -150,7 +156,7 @@ def loadindex(email):
 
     for c in list_of_objects:
         s = c.skills
-        c.image_url = my_dict.get(s.lower(), "https://cdn.sanity.io/images/tlr8oxjg/production/a1d0c722a8cb0b6eac4a89b93f863897f1325e92-958x536.png?w=3840&q=80&fit=clip&auto=format")
+        c.image_url = my_dict.get(s.lower(), random.choice(image_urls))
 
     uniq = set()
     uniq_list = []
@@ -188,8 +194,41 @@ def login():
                         courses.append(c)
 
                 list_of_objects = [MyObject(*sublist) for sublist in courses]
+                list_of_objects = sorted(list_of_objects, key=lambda x: x.title)
+                image_urls = [
+                    "https://cdn.sanity.io/images/tlr8oxjg/production/9a86b0e680636159ffeae3cb3c8533fb8530a16c-1456x816.png?w=3840&q=80&fit=clip&auto=format",
+                    "https://cdn.sanity.io/images/tlr8oxjg/production/3565e89270c2601dd194f894bfdbe489f265917e-1456x816.png?w=3840&q=80&fit=clip&auto=format",
+                    "https://cdn.sanity.io/images/tlr8oxjg/production/9a9f4a2035426b1f22ab20b7a36a5ffa26c5bc22-1456x816.png?w=3840&q=80&fit=clip&auto=format",
+                    "https://cdn.sanity.io/images/tlr8oxjg/production/15319392e0b3b29c4301b570e7e83f211b84ca29-1456x816.png?w=3840&q=80&fit=clip&auto=format",
+                    "https://cdn.sanity.io/images/tlr8oxjg/production/ada93729daf922ad0318c8c0295e5cb477921808-1456x816.png?w=3840&q=80&fit=clip&auto=format"
+                ]
+                my_dict = {
+                    "artificial intelligence": "https://cdn.sanity.io/images/tlr8oxjg/production/9a86b0e680636159ffeae3cb3c8533fb8530a16c-1456x816.png?w=3840&q=80&fit=clip&auto=format",
+                    "machine learning": "https://cdn.sanity.io/images/tlr8oxjg/production/3565e89270c2601dd194f894bfdbe489f265917e-1456x816.png?w=3840&q=80&fit=clip&auto=format",
+                    "data science": "https://cdn.sanity.io/images/tlr8oxjg/production/9a9f4a2035426b1f22ab20b7a36a5ffa26c5bc22-1456x816.png?w=3840&q=80&fit=clip&auto=format",
+                    "network secuity": "https://cdn.sanity.io/images/tlr8oxjg/production/bdb77d61d1ef7dc459bf17ae010658476c00d420-1456x816.png?w=3840&q=80&fit=clip&auto=format",
+                    "Android": "https://cdn.sanity.io/images/tlr8oxjg/production/6570b5c208c0588952cf7856467b6b9872a3504a-1456x816.png?w=3840&q=80&fit=clip&auto=format",
+                    "iOS": "https://cdn.sanity.io/images/tlr8oxjg/production/e91a4659d80f9de0294d1fc4d9c78b23a4e93146-1456x816.png?w=3840&q=80&fit=clip&auto=format",
+                    "cloud computing": "https://cdn.sanity.io/images/tlr8oxjg/production/054f83d78498f35ed2598bb7a87baf8695bcf4b2-1456x816.png?w=3840&q=80&fit=clip&auto=format"
+                }
+
+                for c in list_of_objects:
+                    s = c.skills
+                    c.image_url = my_dict.get(s.lower(), random.choice(image_urls))
+
+                uniq = set()
+                uniq_list = []
+
+                # Now 'image_urls' is a Python list containing the specified URLs.
+
+                for c in list_of_objects:
+                    if c.title in uniq:
+                        continue
+                    else:
+                        uniq.add(c.title)
+                        uniq_list.append(c)
                 return render_template("index.html", fullname=user['fullname'], email=user['email'],
-                                       phone=user['phone'], student_data=user_data, recomended=list_of_objects)
+                                       phone=user['phone'], student_data=user_data, recomended=uniq_list)
             else:
                 return render_template("login.html", error="Credentials not matching")
 
