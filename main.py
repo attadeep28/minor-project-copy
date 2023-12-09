@@ -151,7 +151,7 @@ def loadindex(email):
         "network secuity": "https://cdn.sanity.io/images/tlr8oxjg/production/bdb77d61d1ef7dc459bf17ae010658476c00d420-1456x816.png?w=3840&q=80&fit=clip&auto=format",
         "Android": "https://cdn.sanity.io/images/tlr8oxjg/production/6570b5c208c0588952cf7856467b6b9872a3504a-1456x816.png?w=3840&q=80&fit=clip&auto=format",
         "iOS": "https://cdn.sanity.io/images/tlr8oxjg/production/e91a4659d80f9de0294d1fc4d9c78b23a4e93146-1456x816.png?w=3840&q=80&fit=clip&auto=format",
-        "cloud computing" : "https://cdn.sanity.io/images/tlr8oxjg/production/054f83d78498f35ed2598bb7a87baf8695bcf4b2-1456x816.png?w=3840&q=80&fit=clip&auto=format"
+        "cloud computing": "https://cdn.sanity.io/images/tlr8oxjg/production/054f83d78498f35ed2598bb7a87baf8695bcf4b2-1456x816.png?w=3840&q=80&fit=clip&auto=format"
     }
 
     for c in list_of_objects:
@@ -322,6 +322,12 @@ def create():
         if insert_student_info(studentInfo):
             return render_template('login.html')
         return 'Somthing Went Wrong'
+
+
+@app.route('/resume/<email>', methods=['GET'])
+def resume(email):
+    user_data = mongo.db.studentsInfo.find_one({'email': email})
+    return render_template('resume.html', student_info=user_data, email=email)
 
 
 if __name__ == "__main__":

@@ -384,3 +384,42 @@ nav {
     width: 100%;
   }
 }
+
+
+
+
+
+.card-body{
+  display: flex;
+  width: 100%;
+}
+#name{
+  padding-top: 1.7rem;
+}
+.address-heading, .education-details{
+  margin-top: 2rem;
+}
+.score-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  margin: 0;
+  color: #666;
+}
+
+.info-item{
+background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
