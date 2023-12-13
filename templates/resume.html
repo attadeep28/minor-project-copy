@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/resume.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="full-name">
+          <span class="first-name">{{student_info['fName']}}</span>
+          <span class="last-name">{{student_info['lName']}}</span>
+        </div>
+        <div class="contact-info">
+          <span class="email">Email: </span>
+          <span class="email-val">{{student_info['email']}}</span>
+          <span class="separator"></span>
+          <span class="phone">Phone: </span>
+          <span class="phone-val">{{student_info['phone']}}</span>
+        </div>
+        <div class="about">
+          <span class="position">{{student_info['department']}} Student</span>
+          <span class="desc">
+            Seeking an entry-level position to leverage my problem-solving skills and theoretical knowledge in software development. Passionate about coding and eager to contribute to cutting-edge software solutions. Committed to continuous learning and delivering high-quality results within a collaborative team environment.
+          </span>
+        </div>
+      </div>
+      <div class="details">
+
+
+        <div class="section">
+          <div class="section__title">Education</div>
+          <div class="section__list">
+            <div class="section__list-item">
+              <div class="left">
+                <div class="name">Yeshwantrao Chavan College of Engineering</div>
+                <div class="addr">Nagpur MH, IN</div>
+                <div class="duration">Btech in {{student_info['department']}}</div>
+                <div class="cgpa">CGPA {{student_info['CGPA']}}</div>
+              </div>
+
+            </div>
+            <div class="section__list-item">
+              <div class="left">
+                <div class="name">Higher Secondary Certificate</div>
+                <div class="hsc-score">HSC score {{student_info['HSC']}}%</div>
+              </div>
+              <div class="right">
+                 <div class="name">Secondary School Certificate</div>
+                <div class="hsc-score">SSC Score {{student_info['SSC']}}%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section__title">Projects</div>
+          <div class="section__list">
+
+            {% for project in student_info['projects'] %}
+
+            <div class="section__list-item">
+              <div class="name">{{project.projectName}} | {{project.domain}} | {{project.duration}} months</div>
+              <div class="text">{{project.projectDescription}}</div>
+          </div>
+            {% endfor %}
+
+        </div>
+          </div>
+        <div class="section">
+          <div class="section__title">Certifications</div>
+
+              {% for certificate in student_info['certificates'] %}
+                <div class="name">Specialization&nbsp; :&nbsp; {{certificate.Certificate_Specialization}}&nbsp; &nbsp; Key Skill:&nbsp; {{certificate.Certificate_Key_Skill}} </div>
+                <div class="text">Issued By {{certificate.InstituteORCompany}} on {{certificate.Date_Of_Certification}}</div>
+                {% endfor %}
+
+        </div>
+        <div class="section">
+          <div class="section__title">Interests</div>
+          <div class="section__list">
+             {% for domain in student_info['domains'] %}
+                  <div class="name">
+                    {{ domain}}
+                  </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

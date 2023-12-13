@@ -46,7 +46,7 @@
         </div>
       </div>
     <div class="container" id="main-container">
-         <form action="/form" method="POST">
+         <form action="/form" method="post" enctype="multipart/form-data">
 
             <!-- Personal Details -->
             <section id="Personal-Details">
@@ -119,7 +119,7 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="SSC-Mark-sheet" class="form-label">Upload Your 10th Mark Sheet</label>
-                            <input type="file" class="form-control" id="SSC-Mark-sheet" name="SSC_Mark_sheet">
+                            <input type="file" class="form-control" id="SSC-Mark-sheet" name="SSC_Mark_sheet" accept=".pdf">
                         </div>
                     </div>
                 </div>
@@ -133,7 +133,7 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="HSC-Mark-sheet" class="form-label">Upload Your 12th/diploma Mark Sheet</label>
-                            <input type="file" class="form-control" id="HSC-Mark-sheet" name="HSC_Mark_sheet">
+                            <input type="file" class="form-control" id="HSC-Mark-sheet" name="HSC_Mark_sheet" accept=".pdf">
                         </div>
                     </div>
                 </div>

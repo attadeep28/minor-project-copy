@@ -107,7 +107,7 @@
             </a>
           </li>
           <li>
-            <a href="/login">
+            <a href="/logout">
               <i class="fa-solid fa-right-from-bracket"></i>
               <span>Log Out</span>
             </a>
@@ -171,6 +171,7 @@
                       <a
                         href="/resume/{{email}}"
                         class="btn btn-lg border"
+                        target="_blank"
                       >
                         <i class="bi bi-eye"></i>Resume
                       </a>
@@ -182,13 +183,27 @@
                     Educational Details
                   </h5>
                   <div class="col-3 score-card">
-                    <h6>10th Score</h6>
+                     <h6>10th Score
+                      </h6>
+                   <a
+                        href="/view-ssc/{{email}}"
+                        target="_blank"
+                      >
+
                     <p>{{student_info['SSC']}}%</p>
+                    </a>
                   </div>
 
                   <div class="col-3 score-card">
                     <h6>12th Score</h6>
-                    <p>{{student_info['HSC']}}%</p>
+
+                     <a
+                        href="/view-hsc/{{email}}"
+
+                        target="_blank"
+                      > <p>{{student_info['HSC']}}%</p>
+
+                      </a>
                   </div>
 
                   <div class="col-3 score-card">

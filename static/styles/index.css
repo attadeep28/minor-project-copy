@@ -294,7 +294,7 @@ nav {
   }
 
 
-.box:hover {
+.box:hover, .score-card:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease;
 }
@@ -302,8 +302,11 @@ nav {
 .box p {
   font-size: 16px;
   margin-top: 5px;
-}
 
+}
+.course p{
+    color: white;
+}
 .box button {
   background: #000;
   color: #fff;
@@ -422,4 +425,7 @@ background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin: 20px;
+}
+.score-card a{
+    text-decoration:none
 }
