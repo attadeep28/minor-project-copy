@@ -55,7 +55,7 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="fName" class="form-label">First Name *</label>
-                            <input type="text" class="form-control" id="fName" name="fName" required>
+                            <input type="text" class="form-control" id="fName" name="fName" required value="{{sample_student_data['fullName']}}">
                         </div>
                     </div>
                     <div class="col">
@@ -88,20 +88,20 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email ID</label>
-                            <input type="email" class="form-control" id="email" name="email">
+                            <input type="email" class="form-control" id="email" name="email" value="{{sample_student_data['email']}}">
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
                             <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" class="form-control" id="phone" name="phone">
+                            <input type="tel" class="form-control" id="phone" name="phone" value="{{sample_student_data['phone']}}">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <label for="address" class="form-label">Your Address</label>
-                        <textarea class="form-control" id="address" name="address" rows="3"></textarea>
+                        <input type="text" class="form-control" id="address" name="address"></input>
                     </div>
                 </div>
             </section>
@@ -144,6 +144,7 @@
                             <select class="form-select" id="department" name="department">
                                 <option value="#">Select</option>
                                 <option value="Computer Science">Computer Science</option>
+                                <option value="Computer Technology">Computer Technology</option>
                                 <option value="Electrical">Electrical</option>
                                 <option value="Mechanical">Mechanical</option>
                                 <option value="Electronics">Electronics</option>
@@ -171,14 +172,14 @@
                     </div>
                     <div class="col">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="AI/ML" name="domains" value="AI/ML">
-                            <label class="form-check-label" for="AI/ML">AI/ML</label>
+                            <input class="form-check-input" type="checkbox" id="AI/ML" name="domains" value="artificial intelligence">
+                            <label class="form-check-label" for="AI/ML">artificial intelligence</label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="CyberSecurity" name="domains" value="Cyber Security">
-                            <label class="form-check-label" for="CyberSecurity">Cyber Security</label>
+                            <input class="form-check-input" type="checkbox" id="CyberSecurity" name="domains" value="Network Security">
+                            <label class="form-check-label" for="CyberSecurity">Network Security</label>
                         </div>
                     </div>
                 </div>
@@ -191,18 +192,111 @@
                     </div>
                     <div class="col">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="AndroidAppDevelopment" name="domains" value="Android App Development">
-                            <label class="form-check-label" for="AndroidAppDevelopment">Android App Development</label>
+                            <input class="form-check-input" type="checkbox" id="AndroidAppDevelopment" name="domains" value="Android">
+                            <label class="form-check-label" for="AndroidAppDevelopment">Android</label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="BlockchainDeveloper" name="domains" value="Blockchain Developer">
-                            <label class="form-check-label" for="BlockchainDeveloper">Blockchain Developer</label>
+                            <input class="form-check-input" type="checkbox" id="BlockchainDeveloper" name="domains" value="machine learning">
+                            <label class="form-check-label" for="BlockchainDeveloper">machine learning</label>
                         </div>
                     </div>
                 </div>
+                <div class="row my-3">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="Cloud Computing" name="domains" value="Cloud Computing">
+                            <label class="form-check-label" for="Cloud Computing">Cloud Computing</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="BlockChain" name="domains" value="BlockChain">
+                            <label class="form-check-label" for="BlockChain">BlockChain</label>
+                        </div>
+                    </div>
+
+                </div>
             </section>
+  <!-- Skills Choice -->
+           <section id="skill-Choice">
+    <h5 class="my-5">Skills You Have</h5>
+    <div class="row">
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="java" name="skills" value="Java">
+                <label class="form-check-label" for="java">Java</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="nodejs" name="skills" value="Node.js">
+                <label class="form-check-label" for="nodejs">Node.js</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="python" name="skills" value="Python">
+                <label class="form-check-label" for="python">Python</label>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="javascript" name="skills" value="JavaScript">
+                <label class="form-check-label" for="javascript">JavaScript</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="css" name="skills" value="CSS">
+                <label class="form-check-label" for="css">CSS</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="html" name="skills" value="HTML">
+                <label class="form-check-label" for="html">HTML</label>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="react" name="skills" value="React">
+                <label class="form-check-label" for="react">React</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="mongodb" name="skills" value="MongoDB">
+                <label class="form-check-label" for="mongodb">MongoDB</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="dotnet" name="skills" value=".NET">
+                <label class="form-check-label" for="dotnet">.NET</label>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="csharp" name="skills" value="C#">
+                <label class="form-check-label" for="csharp">C#</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="sql" name="skills" value="SQL">
+                <label class="form-check-label" for="sql">SQL</label>
+            </div>
+        </div>
+    </div>
+</section>
 
             <!-- Certifications -->
             <section id="Certifications">
@@ -247,8 +341,11 @@
 
                 </div>
             </section>
-            <input type="text" name="id"  id="_id">
+              <div class="btn-div">
+                <input type="text" name="id"  id="_id">
             <button type="submit" id="createAccount" class="btn btn-primary">Create Account</button>
+            </div>
+
         </form>
     </div>
 	

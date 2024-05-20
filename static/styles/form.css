@@ -1,49 +1,52 @@
 
-      body {
-        opacity: 98%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background: #dfe9f5;
-      }
+body {
+  opacity: 98%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: #dfe9f5;
+}
 
-      #Personal-Details,
-      #Login-Details,
-      #Educational-Details,
-      #Domain-Choice,
-      #Certifications {
-        border-bottom: 1px solid black;
-        padding-bottom: 5px;
-      }
-      .Certificate-input .Certificate-table {
-        padding: 40px;
-        margin: 10px;
-      }
-      .logo h3 {
-        font-size: 30px;
-        font-weight: bold;
-        color: #38b6ff;
-      }
-      #header {
-        background-color: white;
-        margin-top: 0 !important;
-        z-index: 100;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      .logo {
-        margin-left: 1%;
-      }
-      #createAccount {
-        border-radius: 120px;
-        padding: 20px;
-        font-weight: 600;
-        margin-top: 20px;
-        background-color: #38b6ff;
-      }
-      #main-container{
-        background-color: white;
-      }
-      #_id{
-        visibility: hidden;
-      }
+#Personal-Details,
+#Login-Details,
+#Educational-Details,
+#Domain-Choice,
+#Certifications {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+.Certificate-input .Certificate-table {
+  padding: 40px;
+  margin: 10px;
+}
+.logo h3 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #38b6ff;
+}
+#header {
+  background-color: white;
+  margin-top: 0 !important;
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  margin-left: 1%;
+}
+#createAccount {
 
+  padding: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+  background-color: #38b6ff;
+}
+#main-container{
+  background-color: white;
+}
+#_id{
+  visibility: hidden;
+}
+
+.btn-div{
+  display: grid;
+}

@@ -55,65 +55,64 @@
   </head>
   <body>
     <div class="container">
-      <nav>
-        <div class="logo">
-          <i class="fa-solid fa-graduation-cap"></i>
-          <h3>Scholarlytics</h3>
-          <svg
-            width="90"
-            height="13"
-            align="center"
-            viewBox="0 0 90 13"
-            fill="none"
-            id="arrow"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M89.9975 6.38673L79.9975 0.613228V12.1602L89.9975 6.38673ZM-0.00250244 7.38673H80.9975V5.38673H-0.00250244V7.38673Z"
-              fill="black"
-            />
-          </svg>
-        </div>
+         <nav>
+      <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>Scholarlytics</h3>
+        <svg
+          width="90"
+          height="13"
+          align="center"
+          viewBox="0 0 90 13"
+          fill="none"
+          id="arrow"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M89.9975 6.38673L79.9975 0.613228V12.1602L89.9975 6.38673ZM-0.00250244 7.38673H80.9975V5.38673H-0.00250244V7.38673Z"
+            fill="black"
+          />
+        </svg>
+      </div>
 
-        <ul class="menu">
-          <li class="active">
+      <ul class="menu">
+        <li class="active ">
+
             <a href="/index/{{email}}">
-              <i class="fa-solid fa-house"></i>
-              <span>Home</span>
-            </a>
-          </li>
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </a>
+
+        </li>
+        <li>
+          <a href="/profile/{{email}}" >
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="/Assessment/{{email}}"><i class="fa-solid fa-book"></i>
+            <span>Assessment</span>
+          </a>
+        </li>
+        <li>
+          <a href="/Courses/{{email}}"><i class="fa-solid fa-chalkboard-user"></i>
+            <span>Courses</span>
+          </a>
+        </li>
           <li>
-            <a href="/profile/{{email}}">
-              <i class="fa-solid fa-user"></i>
-              <span>Profile</span>
-            </a>
-          </li>
-          <li>
-            <a href="/Assessment"
-              ><i class="fa-solid fa-book"></i>
-              <span>Assessment</span>
-            </a>
-          </li>
-          <li>
-            <a href="/Courses"
-              ><i class="fa-solid fa-chalkboard-user"></i>
-              <span>Courses</span>
-            </a>
-          </li>
-          <li>
-            <a href="/Settings"
-              ><i class="fa-solid fa-gear"></i>
-              <span>Settings</span>
-            </a>
-          </li>
-          <li>
-            <a href="/logout">
+          <a href="/Job/{{email}}"><i class="fa-solid fa-briefcase"></i>
+            <span>Jobs</span>
+          </a>
+        </li>
+        <li>
+          <a href="/logout">
               <i class="fa-solid fa-right-from-bracket"></i>
               <span>Log Out</span>
             </a>
-          </li>
-        </ul>
-      </nav>
+        </li>
+      </ul>
+    </nav>
 
       <section class="main">
         <h4 id="your-profile">Your Profile</h4>
@@ -151,22 +150,8 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-4 px-5">
-                    <p>Profile Strength</p>
-                    <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 74%"
-                        aria-valuenow="85"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        74%
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-6">
+
+
                     <div class="container d-flex justify-content-end">
                       <a
                         href="/resume/{{email}}"
@@ -175,8 +160,10 @@
                       >
                         <i class="bi bi-eye"></i>Resume
                       </a>
+                       <a href="/update_profile/{{email}}"   class="btn btn-lg border"
+                        target="_blank">Update profile</a>
                     </div>
-                  </div>
+
                 </div>
                 <div class="row d-flex justify-content-evenly mt-5">
                   <h5 class="address-heading my-2 mx-5 px-5">
@@ -218,6 +205,13 @@
                     {% for domain in student_info['domains'] %}
                     <span class="badge" style="background-color: #38b6ff"
                       >{{ domain}}</span
+                    >
+                    {% endfor %}
+                  </div> <div class="col my-2 px-5 mt-3">
+                    <h6>Your Skills</h6>
+                    {% for skill in student_info['skills'] %}
+                    <span class="badge" style="background-color: #f79422"
+                      >{{ skill}}</span
                     >
                     {% endfor %}
                   </div>

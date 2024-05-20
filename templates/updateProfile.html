@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Info</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/b67d32b573.js"
+      crossorigin="anonymous"
+    ></script>
+
+     <link rel="stylesheet" href="{{ url_for('static', filename='styles/form.css') }}">
+
+    <!-- Include your CSS and JavaScript libraries here -->
+</head>
+<body>
+    <div class="container-fluid" id="header">
+        <div class="logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <h3>Scholarlytics</h3>
+          <svg
+            width="90"
+            height="13"
+            viewBox="0 0 90 13"
+            fill="none"
+            id="arrow"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M89.9975 6.38673L79.9975 0.613228V12.1602L89.9975 6.38673ZM-0.00250244 7.38673H80.9975V5.38673H-0.00250244V7.38673Z"
+              fill="black"
+            />
+          </svg>
+        </div>
+      </div>
+    <div class="container" id="main-container">
+         <form action="/update_profile/{{email}}" method="post" enctype="multipart/form-data">
+
+            <!-- Personal Details -->
+            <section id="Personal-Details">
+                <h5 class="my-5">Personal Details</h5>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="fName" class="form-label">First Name *</label>
+                            <input type="text" class="form-control" id="fName" name="fName" required value="{{student_info['fName']}}">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="lName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lName" name="lName" value="{{student_info['lName']}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="gender" class="form-label">Select your Gender</label>
+                            <select class="form-select" id="gender" name="gender" required>
+                                <option value="{{student_info['gender']}}">Select</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="DOB" class="form-label">Select Date of Birth</label>
+                            <input type="date" class="form-control" id="DOB" name="DOB" value="{{student_info['DOB']}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email ID</label>
+                            <input type="email" class="form-control" id="email" name="email" value="{{student_info['email']}}">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" value="{{student_info['phone']}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="address" class="form-label">Your Address</label>
+                        <input type="text" class="form-control" id="address" name="address" value="{{student_info['address']}}">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Educational Details -->
+            <section id="Educational-Details">
+                <h5 class="my-5">Educational Details</h5>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="SSC" class="form-label">Enter Your 10th Percentage</label>
+                            <input type="text" class="form-control" id="SSC" name="SSC" value="{{student_info['SSC']}}">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="SSC-Mark-sheet" class="form-label">Upload Your 10th Mark Sheet</label>
+                            <input type="file" class="form-control" id="SSC-Mark-sheet" name="SSC_Mark_sheet" accept=".pdf" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="HSC" class="form-label">Enter Your 12th/diploma Percentage</label>
+                            <input type="text" class="form-control" id="HSC" name="HSC" value="{{student_info['SSC']}}">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="HSC-Mark-sheet" class="form-label">Upload Your 12th/diploma Mark Sheet</label>
+                            <input type="file" class="form-control" id="HSC-Mark-sheet" name="HSC_Mark_sheet" accept=".pdf" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="department" class="form-label">Select Your Department</label>
+                            <select class="form-select" id="department" name="department" required>
+                                <option value="{{student_info['department']}}">Select</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Computer Technology">Computer Technology</option>
+                                <option value="Electrical">Electrical</option>
+                                <option value="Mechanical">Mechanical</option>
+                                <option value="Electronics">Electronics</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="CGPA" class="form-label">Enter your current CGPA</label>
+                            <input type="text" class="form-control" id="CGPA" name="CGPA" value="{{student_info['CGPA']}}">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Domain Choice -->
+            <section id="Domain-Choice">
+                <h5 class="my-5">Domain Choice</h5>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="DataScience" name="domains" value="Data Science">
+                            <label class="form-check-label" for="DataScience">Data Science</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="AI/ML" name="domains" value="artificial intelligence">
+                            <label class="form-check-label" for="AI/ML">artificial intelligence</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="CyberSecurity" name="domains" value="Network Security">
+                            <label class="form-check-label" for="CyberSecurity">Network Security</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="WebDevelopment" name="domains" value="Web Development">
+                            <label class="form-check-label" for="WebDevelopment">Web Development</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="AndroidAppDevelopment" name="domains" value="Android">
+                            <label class="form-check-label" for="AndroidAppDevelopment">Android</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="BlockchainDeveloper" name="domains" value="machine learning">
+                            <label class="form-check-label" for="BlockchainDeveloper">machine learning</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="Cloud Computing" name="domains" value="Cloud Computing">
+                            <label class="form-check-label" for="Cloud Computing">Cloud Computing</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="BlockChain" name="domains" value="BlockChain">
+                            <label class="form-check-label" for="BlockChain">BlockChain</label>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+  <!-- Skills Choice -->
+           <section id="skill-Choice">
+    <h5 class="my-5">Skills You Have</h5>
+    <div class="row">
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="java" name="skills" value="Java">
+                <label class="form-check-label" for="java">Java</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="nodejs" name="skills" value="Node.js">
+                <label class="form-check-label" for="nodejs">Node.js</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="python" name="skills" value="Python">
+                <label class="form-check-label" for="python">Python</label>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="javascript" name="skills" value="JavaScript">
+                <label class="form-check-label" for="javascript">JavaScript</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="css" name="skills" value="CSS">
+                <label class="form-check-label" for="css">CSS</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="html" name="skills" value="HTML">
+                <label class="form-check-label" for="html">HTML</label>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="react" name="skills" value="React">
+                <label class="form-check-label" for="react">React</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="mongodb" name="skills" value="MongoDB">
+                <label class="form-check-label" for="mongodb">MongoDB</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="dotnet" name="skills" value=".NET">
+                <label class="form-check-label" for="dotnet">.NET</label>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="csharp" name="skills" value="C#">
+                <label class="form-check-label" for="csharp">C#</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="sql" name="skills" value="SQL">
+                <label class="form-check-label" for="sql">SQL</label>
+            </div>
+        </div>
+    </div>
+</section>
+            <!-- Certifications -->
+            <section id="Certifications">
+                <h5 class="my-5">Certifications</h5>
+                <table class="table table-hover border mt-5" id="Certificate-table" title="Your current Certificates">
+                    <caption>Your current Certifications</caption>
+
+                    <tbody id="certificateTableBody">
+                        {% for certificate in student_info['certificates'] %}
+                        <tr id="newCertificateRow">
+                          <td><input type="text" name="InstituteORCompany" placeholder="Institute/Company" value="{{certificate.InstituteORCompany}}"></td>
+                          <td><input type="date" name="Date_Of_Certification" placeholder="Date Of Certification" value="{{certificate.Date_Of_Certification}}"></td>
+                          <td><input type="text" name="Certificate_Specialization" placeholder="Certificate Specialization" value="{{certificate.Certificate_Specialization}}"></td>
+                          <td><input type="text" name="Certificate_Key_Skill" placeholder="Certificate Key Skill" value="{{certificate.Certificate_Key_Skill}}"></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <button type="button" class="btn btn-secondary my-3" id="addCertificate">Add More Certificate</button>
+            </section>
+
+            <!-- Projects Information -->
+            <section id="projects">
+                <h5 class="my-5">Projects Information</h5>
+                <div class="container">
+                  <table class="table table-hover border mt-5" id="Project-table" title="Your current Projects">
+
+                          <caption>Your current Projects</caption>
+
+                        <tbody id="projectTableBody">
+
+                            {% for project in student_info['projects'] %}
+                            <tr id="newProjectRow">
+                              <td class="projectName"><input type="text" name="projectName" placeholder="projectName" value="{{project.projectName}}"></td>
+                              <td class="domain"><input type="text" name="domain" placeholder="domain" value="{{project.domain}}"></td>
+                              <td class="duration"><input type="text" name="duration" placeholder="duration" value="{{project.duration}}"></td>
+                              <td class="projectDescription"><input type="text" name="projectDescription" placeholder="project Description" value="{{project.projectDescription}}"></td>
+                            </tr>
+                         {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <button type="button" class="btn btn-secondary my-3" id="addProjectButton">Add More Project</button>
+
+                </div>
+            </section>
+              <div class="btn-div">
+                <input type="text" name="id"  id="_id">
+            <button type="submit" id="createAccount" class="btn btn-primary">Update Profile</button>
+            </div>
+
+        </form>
+    </div>
+
+
+	<!-- Add this script section to handle form submission -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+       <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"
+      ></script>
+
+
+<script>
+      const addProjectButton = document.getElementById("addProjectButton");
+      const projectTableBody = document.getElementById("projectTableBody");
+
+      addProjectButton.addEventListener("click", function () {
+          // Clone the new row template
+          const newRow = document.querySelector('#newProjectRow').cloneNode(true);
+
+          // Append the new row to the table body
+          projectTableBody.appendChild(newRow);
+      });
+
+
+      const addCertificateButton = document.getElementById("addCertificate");
+      const certificateTableBody = document.getElementById("certificateTableBody");
+
+      addCertificateButton.addEventListener("click", function () {
+          // Clone the new row template
+          const newRow = document.querySelector('#newCertificateRow').cloneNode(true);
+
+          // Remove the template row's ID to avoid duplicating it
+          newRow.removeAttribute("id");
+
+          // Append the new row to the table body
+          certificateTableBody.appendChild(newRow);
+      });
+
+</script>
+
+
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>
