@@ -73,10 +73,14 @@
     body: JSON.stringify({ topic: `{{topic}}` })
 })
     .then(response => response.json())
-    .then(data => questions=data)
+    .then(data => {
+      questions = data;
+      console.log(questions);
+      questions=JSON.parse(questions);
+      console.log(typeof(questions));
+    })
     .then(()=>{
      generateQuiz();
-
     })
     .catch(error => console.error('Error fetching data:', error));
 
